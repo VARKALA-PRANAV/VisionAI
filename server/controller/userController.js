@@ -1,16 +1,14 @@
 import sql from '../configs/db.js';
 
-export const getUserCreations = async (req,res)=>{
+export const getUserCreations = async (req, res) => {
     try {
-        const {userId} = req.auth()
-
+        const { userId } = req.auth();
         const creations = await sql`SELECT * FROM creations WHERE user_id = ${userId} ORDER BY created_at DESC`;
-
-        res.json({ success : true, creation });
-    } catch (error){
-        res.json({ success: false,message: error.message});
+        res.json({ success: true, creations }); // <-- use creations (plural)
+    } catch (error) {
+        res.json({ success: false, message: error.message });
     }
-}
+};
 
 export const getPublishedCreations = async (req,res)=>{
     try {
@@ -30,7 +28,7 @@ export const toggleLikeCreation = async (req,res)=>{
         const {userId} = req.auth()
         const {id} = req.body
 
-        const [creation] = await sql`SELECT * FROM creations WHERE id = ${id}`
+const [updatedCreation] = await sql`SELECT * FROM creations WHERE id = ${id}`;
         if(!creation){
             return res.json({ success:false,message:"Creation not found"})
         }
@@ -49,7 +47,7 @@ export const toggleLikeCreation = async (req,res)=>{
          
 
         
-        res.json({ success : true, creations});
+        res.json({ success : true, message});
     } catch (error){
         res.json({ success: false,message: error.message});
     }

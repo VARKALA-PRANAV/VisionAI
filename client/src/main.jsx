@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import {BrowserRouter} from 'react-router-dom'
 import { ClerkProvider } from '@clerk/clerk-react'
+import Dashboard from './pages/Dashboard.jsx'
 
 
 
