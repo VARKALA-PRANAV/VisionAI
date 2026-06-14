@@ -29,13 +29,12 @@ const Footer = () => {
                 <h2 className="font-semibold mb-5 text-gray-800">Get in touch</h2>
                 <div className="text-sm space-y-2">
                     <p>+91-6300095663</p>
-                    <p>pranavvarakala91@Gmail.com</p>
                 </div>
             </div>
         </div>
     </div>
     <p className="pt-4 text-center text-xs md:text-sm pb-5">
-        Copyright 2025 © <a href="#">Vision.AI</a> All Right Reserved.
+        Copyright 2026 © <a href="#">Vision.AI</a> All Right Reserved.
     </p>
 </footer>
     </div>
